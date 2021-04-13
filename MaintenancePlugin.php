@@ -10,6 +10,11 @@ class MaintenancePlugin extends Omeka_Plugin_AbstractPlugin
         'config',
     );
 
+	protected $_filters = array (
+		'public_navigation_admin_bar',
+		'admin_navigation_global'
+	);
+
     /**
      * @var array This plugin's options.
      */
@@ -18,7 +23,8 @@ class MaintenancePlugin extends Omeka_Plugin_AbstractPlugin
         'maintenance_message' => '<p>Sorry for the inconvenience but we’re performing some maintenance at the moment. We’ll be back online shortly!</p>
                                 <br>
                                 <p>— The Team</p>',
-        'maintenance_fullpagemode' => 0
+        'maintenance_mode_fullpage' => 0,
+        'maintenance_show_reminder' => 0
     );
 
     public function hookInitialize()
@@ -66,4 +72,38 @@ class MaintenancePlugin extends Omeka_Plugin_AbstractPlugin
             set_option($optionKey, $optionValue);
         }
     }
+	
+	/**
+     * 	Adds warning to admin bar, public side
+     */
+	public function filterPublicNavigationAdminBar($navLinks) 
+	{
+		$user = current_user();
+		if (isset($user) && (bool)get_option('maintenance_show_reminder')) {
+			// Creates new menu item, then adds it to navigation array
+			$element = array(
+				'label' => '**' . __('Site under maintenance') . '**',
+				'uri' => admin_url('/plugins')
+			);
+			$navLinks = array_merge(array($element), $navLinks);
+		}
+		return $navLinks;
+	}
+	
+	/**
+     * 	Adds warning to admin bar, admin side
+     */
+	public function filterAdminNavigationGlobal($navLinks) 
+	{
+		$user = current_user();
+		if (isset($user) && (bool)get_option('maintenance_show_reminder')) {
+			// Creates new menu item, then adds it to navigation array
+			$element = array(
+				'label' => '**' . __('Site under maintenance') . '**',
+				'uri' => admin_url('/plugins')
+			);
+			$navLinks = array_merge(array($element), $navLinks);
+		}
+		return $navLinks;
+	}
 }
