@@ -2,7 +2,7 @@ Maintenance (plugin for Omeka Classic)
 ======================================
 
 [Maintenance] is a plugin for [Omeka Classic] that allows to put an Omeka site
-in maintenance mode, with a specific message.
+in maintenance mode, with a specific message (public side, for not logged in users).
 
 
 Installation
@@ -57,6 +57,7 @@ Copyright
 
 * Copyright BibLibre, 2016 (see [BibLibre] on GitHub)
 * Copyright Daniel Berthereau, 2019 (see [Daniel-KM] on GitHub)
+* Copyright Daniele Binaghi, 2021 (see [DBinaghi] on GitHub)
 
 
 [Omeka Classic]: https://omeka.org/classic
@@ -66,3 +67,4 @@ Copyright
 [GNU/GPL]: https://www.gnu.org/licenses/gpl-3.0.html
 [BibLibre]: https://github.com/BibLibre
 [Daniel-KM]: https://github.com/Daniel-KM "Daniel Berthereau"
+[DBinaghi]: https://github.com/DBinaghi "Daniele Binaghi"
