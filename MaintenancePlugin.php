@@ -14,11 +14,11 @@ class MaintenancePlugin extends Omeka_Plugin_AbstractPlugin
      * @var array This plugin's options.
      */
     protected $_options = array(
-		'maintenance_title' => 'Site under maintenance',
+        'maintenance_title' => 'Site under maintenance',
         'maintenance_message' => '<p>Sorry for the inconvenience but we’re performing some maintenance at the moment. We’ll be back online shortly!</p>
-								<br>
-								<p>— The Team</p>',
-		'maintenance_fullpagemode' => 0
+                                <br>
+                                <p>— The Team</p>',
+        'maintenance_fullpagemode' => 0
     );
 
     public function hookInitialize()
