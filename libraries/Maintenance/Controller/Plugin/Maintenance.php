@@ -13,5 +13,5 @@ class Maintenance_Controller_Plugin_Maintenance extends Zend_Controller_Plugin_A
             $request->setModuleName('maintenance');
             $request->setControllerName('index');
         }
-    } 
+    }
 }
