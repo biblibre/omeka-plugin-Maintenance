@@ -2,7 +2,7 @@
     /**
      * @var Omeka_View $this
      */
-    $mode_fullpage = (bool)get_option('maintenance_fullpagemode');
+    $mode_fullpage = (bool)get_option('maintenance_mode_fullpage');
 
     if (!$mode_fullpage) {
         echo head(array(
