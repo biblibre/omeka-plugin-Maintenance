@@ -100,7 +100,7 @@ class MaintenancePlugin extends Omeka_Plugin_AbstractPlugin
 			// Creates new menu item, then adds it to navigation array
 			$element = array(
 				'label' => '**' . __('Site under maintenance') . '**',
-				'uri' => admin_url('/plugins')
+				'uri' => admin_url('/plugins/config?name=Maintenance')
 			);
 			$navLinks = array_merge(array($element), $navLinks);
 		}
